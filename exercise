@@ -1,0 +1,108 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[a4paper,margin=1in]{geometry} % Page layout
+\usepackage{fancyhdr} % Header/Footer customization
+\usepackage{listings} % Code listings
+\usepackage{xcolor} % Colors for code highlighting
+\usepackage{hyperref} % Clickable links
+\usepackage{graphicx} % For images if needed
+\usepackage{titlesec} % For getting the current section in header
+
+% Title Page Information
+\newcommand{\courseTitle}{Programming 2}
+\newcommand{\exerciseNumber}{X} % Replace with the exercise number
+\newcommand{\studentName}{Anna Hoessinger}
+\newcommand{\matrikelnummer}{matrikelnummer}
+\newcommand{\email}{matrikelnummer@students.jku.at}
+
+% Code listing style (Fix 2: Proper comment wrapping)
+\lstdefinestyle{customcpp}{
+    language=C++, 
+    basicstyle=\ttfamily\footnotesize, 
+    keywordstyle=\color{blue}, 
+    commentstyle=\color{gray}, 
+    stringstyle=\color{red}, 
+    numbers=left, 
+    numbersep=8pt, 
+    numberstyle=\tiny\color{gray}, 
+    breaklines=true,  
+    breakatwhitespace=false,  
+    frame=single,
+    prebreak=\textbackslash,  % Show '\' when breaking a line
+    postbreak=\mbox{\textcolor{gray}{$\hookrightarrow$}}, % Nice arrow for wrapped lines
+    columns=fullflexible
+}
+
+% Define header and footer
+\pagestyle{fancy}
+\fancyhf{} % Clear default header/footer settings
+
+% Ensure section titles appear in the header
+\renewcommand{\sectionmark}[1]{\markright{\thesection\quad #1}}
+
+% Header Setup
+\fancyhead[L]{\courseTitle}  % Left: Course Title
+\fancyhead[C]{Exercise \#\exerciseNumber}  % Center: Exercise Number
+\fancyhead[R]{\nouppercase{\rightmark}} % Right: Current Section Title
+
+% Footer Setup
+\fancyfoot[L]{\studentName\ (\matrikelnummer)}  % Left: Name + Matrikelnummer
+\fancyfoot[C]{\today}  % Center: Current Date
+\fancyfoot[R]{Page \thepage} % Right: Page Number
+
+\begin{document}
+
+% Cover Page (No header/footer)
+\begin{titlepage}
+    \centering
+    \vspace*{\fill}
+    {\Huge \textbf{\courseTitle}}\\[1.5cm]
+    {\LARGE \textbf{Exercise \#\exerciseNumber}}\\[2cm]
+    \textbf{Name:} \studentName \\[0.5cm]
+    \textbf{Matrikelnummer:} \matrikelnummer \\[0.5cm]
+    \textbf{Email:} \email \\[1.5cm]
+    \vspace*{\fill}
+    {\small \today}
+\end{titlepage}
+
+% Activate header/footer after cover page
+\pagestyle{fancy}
+
+% Section 1: Source Code Listings
+\section{Source Code Listings}
+
+\subsection{Main Program}
+% FOLGENDES AUSKOMMENTIEREN ANNA!!!! (ned vergessen main.cpp im selben ordner zu erstellen) :)
+%\lstinputlisting[style=customcpp]{main.cpp}
+
+% Section 2: Test Cases
+\section{Test Cases}
+
+\subsection{Test 1: Basic Functionality}
+\textbf{Input:}
+\begin{verbatim}
+10
+9127271 42 489 92 14 16
+15242314 38 117 316 3 8
+11616754 37 390 113 1 7
+921462 20 333 39 8 16
+10994889 12 429 75 10 8
+2996785 42 198 159 10 14
+3846405 9 579 188 19 5
+15580587 22 210 313 12 1
+15934548 23 73 401 17 2
+8385825 17 291 174 17 6
+\end{verbatim}
+
+\textbf{Expected Output:}
+\begin{verbatim}
+Sum: 30
+\end{verbatim}
+
+\textbf{Actual Output:}
+\begin{verbatim}
+Sum: 30
+\end{verbatim}
+
+\textbf{Result:} Passed
+
+\end{document}
